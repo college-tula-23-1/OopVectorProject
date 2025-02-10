@@ -47,6 +47,7 @@ int Vector::PopBack()
 	if (capacity >= size * 2)
 	{
 		NewCapacity();
+
 	}
 
 	return value;
