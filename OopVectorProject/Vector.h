@@ -33,5 +33,6 @@ public:
 	void Item(int index, int value);
 
 	int& At(int index);
+	int& operator[](int index);
 };
 

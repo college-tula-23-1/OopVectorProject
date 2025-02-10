@@ -47,7 +47,26 @@ int Vector::PopBack()
 	if (capacity >= size * 2)
 	{
 		NewCapacity();
+	}
 
+	return value;
+}
+
+int Vector::PopFront()
+{
+	return Remove(0);
+}
+
+int Vector::Remove(int index)
+{
+	int value = items[index];
+	for (int i{ index + 1 }; i < size; i++)
+		items[i - 1] = items[i];
+	size--;
+
+	if (capacity >= size * 2)
+	{
+		NewCapacity();
 	}
 
 	return value;
@@ -79,4 +98,9 @@ int& Vector::At(int index)
 		return items[index];
 	else
 		throw - 1;
+}
+
+int& Vector::operator[](int index)
+{
+	return items[index];
 }

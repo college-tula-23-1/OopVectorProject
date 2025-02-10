@@ -32,7 +32,7 @@ void VectorExample()
 
     for (int i{}; i < 10; i++)
     {
-        std::cout << "pop item: " << v.PopBack()
+        std::cout << "pop item: " << v.PopFront()
             << " size: " << v.Size()
             << " capacity: " << v.Capacity() << "\n";
     }
