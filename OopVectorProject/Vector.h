@@ -1,4 +1,6 @@
 #pragma once
+#include "VectorIterator.h"
+
 template <typename T>
 class Vector
 {
@@ -36,6 +38,8 @@ public:
 
 	T& At(int index);
 	T& operator[](int index);
+
+	VectorIterator<T> Iterator();
 };
 
 #include "Vector.inl"

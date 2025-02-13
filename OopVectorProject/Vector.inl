@@ -119,3 +119,9 @@ T& Vector<T>::operator[](int index)
 {
 	return items[index];
 }
+
+template<typename T>
+inline VectorIterator<T> Vector<T>::Iterator()
+{
+	return VectorIterator<T>(this);
+}

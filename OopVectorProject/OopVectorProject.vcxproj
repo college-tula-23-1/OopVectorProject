@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector.h" />
+    <ClInclude Include="VectorIterator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Vector.inl" />
