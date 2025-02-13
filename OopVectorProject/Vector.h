@@ -1,7 +1,8 @@
 #pragma once
+template <typename T>
 class Vector
 {
-	int* items;
+	T* items;
 	int size;
 	int capacity;
 
@@ -12,27 +13,30 @@ public:
 		size{},
 		capacity{} {}
 	
-	Vector(int value) : items{ new int[value + value / 2] },
+	Vector(int value) 
+		: items{ new T[value + value / 2] },
 		size{ value },
 		capacity{ value + value / 2 } {}
 
 	~Vector() { delete[] items; }
 
-	void PushBack(int value);
-	void PushFront(int value);
-	void Insert(int index, int value);
+	void PushBack(T value);
+	void PushFront(T value);
+	void Insert(int index, T value);
 
-	int PopBack();
-	int PopFront();
-	int Remove(int index);
+	T PopBack();
+	T PopFront();
+	T Remove(int index);
 
 	int Size();
 	int Capacity();
 
-	int Item(int index);
-	void Item(int index, int value);
+	T Item(int index);
+	void Item(int index, T value);
 
-	int& At(int index);
-	int& operator[](int index);
+	T& At(int index);
+	T& operator[](int index);
 };
+
+#include "Vector.inl"
 

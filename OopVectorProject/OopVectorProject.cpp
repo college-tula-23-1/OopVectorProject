@@ -3,7 +3,7 @@
 
 void VectorExample()
 {
-    Vector v;
+    Vector<int> v;
 
     for (int i{}; i < 10; i++)
     {
