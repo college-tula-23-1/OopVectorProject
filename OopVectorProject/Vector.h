@@ -30,7 +30,7 @@ public:
 	T PopFront();
 	T Remove(int index);
 
-	int Size();
+	int Size() const;
 	int Capacity();
 
 	T Item(int index);
@@ -38,6 +38,8 @@ public:
 
 	T& At(int index);
 	T& operator[](int index);
+
+	Vector<T> operator=(const Vector<T>& source);
 
 	VectorIterator<T> Iterator();
 };

@@ -51,9 +51,9 @@ inline T VectorIterator<T>::Current()
 }
 
 template<typename T>
-inline VectorIterator<T> VectorIterator<T>::operator++()
+VectorIterator<T> VectorIterator<T>::operator++()
 {
-	Next()
+	Next();
 	return *this;
 }
 

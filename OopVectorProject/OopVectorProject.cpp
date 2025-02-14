@@ -45,19 +45,19 @@ int main()
     Vector<int> v;
 
     for (int i{}; i < 10; i++)
-    {
         v.PushBack((i + 1) * 100);
-        std::cout << "item: " << (i + 1) * 100
-            << " size: " << v.Size()
-            << " capacity: " << v.Capacity() << "\n";
-    }
 
     auto it = v.Iterator();
     for (it; !it.IsEnd(); it.Next())
         std::cout << it.Current() << " ";
     std::cout << "\n";
 
-    for (it.Reset(); !it.IsEnd(); it.Next())
-        std::cout << it.Current() << " ";
-    std::cout << "\n";
+    Vector<int> vcopy;
+    vcopy = v;
+
+    /*vcopy[3] = 5000;
+
+    for (int i{}; i < v.Size(); i++)
+        std::cout << v[i] << " ";
+    std::cout << "\n";*/
 }

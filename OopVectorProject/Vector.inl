@@ -82,7 +82,7 @@ T Vector<T>::Remove(int index)
 }
 
 template <typename T>
-int Vector<T>::Size() { return size; }
+int Vector<T>::Size() const { return size; }
 
 template <typename T>
 int Vector<T>::Capacity() { return capacity; }
@@ -118,6 +118,22 @@ template <typename T>
 T& Vector<T>::operator[](int index)
 {
 	return items[index];
+}
+
+template<typename T>
+Vector<T> Vector<T>::operator=(const Vector<T>& source)
+{
+	if (this->items != nullptr)
+		delete[] this->items;
+
+	this->size = source.size;
+	this->capacity = source.capacity;
+	this->items = new T[source.size];
+
+	for (int i{}; i < source.size; i++)
+		this->items[i] = source.items[i];
+
+	return *this;
 }
 
 template<typename T>
